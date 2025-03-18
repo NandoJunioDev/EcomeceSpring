@@ -1,17 +1,13 @@
 package ecomece.ecomece.Cadastro;
 
-import org.apache.commons.math3.analysis.function.Identity;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
 
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-
-
-
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 
 @Entity
 @Table(name = "cadastros")
@@ -31,7 +27,7 @@ public class Cadastros {
     public Long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getNome() {

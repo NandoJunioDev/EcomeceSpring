@@ -7,7 +7,7 @@ import ecomece.ecomece.Cadastro.Cadastros;
 
 @Repository
 
-public interface UsuarioRepository  extends  JpaRepository  <Cadastros, Object> {
+public interface UsuarioRepository  extends  JpaRepository  <Cadastros, Long> {
  
 }
 
