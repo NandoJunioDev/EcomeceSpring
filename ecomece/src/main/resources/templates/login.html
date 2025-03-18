@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
   
     <link rel="stylesheet" href="/css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -27,7 +28,7 @@
 
             <h3 class="text-2xl text-center text-[#613D54] my-3 ">Login </h3>
             <form action="/logado" method="post" class="flex flex-col justify-center     items-center  ">
-                <div class="    flex   items-center     " >
+                <div class="    flex   items-center  my-4   " >
                     <i class="fa-solid fa-user  absolute pt-4 pl-1.5   "></i>
                     <input type="email" name="email" id="email" placeholder="Digite Seu email     " class="border-2 border-black bg-transparent text-center mt-4   " required> 
                     
@@ -59,11 +60,16 @@
             
         </fieldset>
 
+        <div th:if="${erro}" style="color: red;" class="    text-center text-[0.75em]  absolute top-[50%]  " id="mensagemErro" >
+            
+            <p th:text="${erro} " class=" "></p>
+        </div>
+
         
 
     </div>
    
 
-    
+    <script src="/js/animaçao.js"></script>
 </body>
 </html>
