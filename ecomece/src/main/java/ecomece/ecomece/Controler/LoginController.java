@@ -35,7 +35,7 @@ Service_Usuario service_Usuario;
         if (erro != null) {
             model.addAttribute("erro", "Credenciais inválidas. Tente novamente.");
         }
-        return "login"; // Nome da view de login (login.html)
+        return "login"; 
     }
 
 
@@ -47,7 +47,7 @@ Service_Usuario service_Usuario;
 public String postMethodName(@RequestParam String email, @RequestParam  String senha, Model model ) {
 
     boolean auteticado = service_Usuario.autenciarusuario(email, senha);
-    //TODO: process POST request
+    
     
     if (auteticado) {
             return "redirect:/usuario";
@@ -62,7 +62,7 @@ public String postMethodName(@RequestParam String email, @RequestParam  String s
 
 @GetMapping("/usuario")
 public String paginaUsuario() {
-    return "usuario"; // Nome da view da página de usuário logado (usuario.html)
+    return "usuario"; 
 }
 
 
