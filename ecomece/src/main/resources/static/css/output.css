@@ -1111,6 +1111,9 @@
   .border-black {
     border-color: var(--color-black);
   }
+  .border-b-black {
+    border-bottom-color: var(--color-black);
+  }
   .bg-\(--my_variable\) {
     background-color: var(--my_variable);
   }
