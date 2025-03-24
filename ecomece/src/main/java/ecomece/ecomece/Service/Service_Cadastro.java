@@ -28,13 +28,5 @@ public Cadastros   cadastrar (Cadastros cadastros){
     
 }
 
-public String usuarioCadastrado (Cadastros cadastros){
-    Optional<Cadastros> usuario = usuarioRepository.findByEmail(cadastros.getEmail());
-    if (usuario.isPresent()) {
-         return "Ja existe o usuario com esse email";
-    }
-     usuarioRepository.save(cadastros);
-     return "usuario cadastrado";
-}
 
 }

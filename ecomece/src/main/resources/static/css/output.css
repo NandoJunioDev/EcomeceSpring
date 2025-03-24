@@ -1964,11 +1964,6 @@
   .transform-view {
     transform-box: view-box;
   }
-  .focus-within\:bg-transparent {
-    &:focus-within {
-      background-color: transparent;
-    }
-  }
   .hover\:bg-gray-300 {
     &:hover {
       @media (hover: hover) {
@@ -1990,26 +1985,6 @@
       }
     }
   }
-  .focus\:bg-amber-50 {
-    &:focus {
-      background-color: var(--color-amber-50);
-    }
-  }
-  .focus\:bg-transparent {
-    &:focus {
-      background-color: transparent;
-    }
-  }
-  .focus\:not-hover\:bg-amber-50 {
-    &:focus {
-      &:not(*:hover) {
-        background-color: var(--color-amber-50);
-      }
-      @media not (hover: hover) {
-        background-color: var(--color-amber-50);
-      }
-    }
-  }
   .focus\:hover\:bg-amber-50 {
     &:focus {
       &:hover {
@@ -2017,11 +1992,6 @@
           background-color: var(--color-amber-50);
         }
       }
-    }
-  }
-  .in-focus\:bg-amber-50 {
-    :where(*:focus) & {
-      background-color: var(--color-amber-50);
     }
   }
 }
