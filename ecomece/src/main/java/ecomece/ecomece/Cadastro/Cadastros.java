@@ -2,6 +2,7 @@ package ecomece.ecomece.Cadastro;
 
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class Cadastros {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    @Column(unique = true)
     private String sobrenome;
     private String email;
     private String senha;
