@@ -10,24 +10,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ecomece.ecomece.Cadastro.Cadastros;
+import ecomece.ecomece.Repository.UsuarioRepository;
 import ecomece.ecomece.Service.Service_Autenticacao;
 
     @Controller
     
     public class Autenticaemail_Controler {
-        private  Service_Autenticacao service_Autenticacao;
+        private  UsuarioRepository service_Autenticacao;
 
         @Autowired
-        public  void AutenticaEmailController(Service_Autenticacao service_Autenticacao) {
-            this.service_Autenticacao = service_Autenticacao;
+        public void  AutenticaEmailController(UsuarioRepository Autenticacao) {
+            this.service_Autenticacao = Autenticacao;
         }
     
         @PostMapping("/signup")
         public ResponseEntity<String> cadastrar(@RequestBody Cadastros cadastros) {
-            String response = service_Autenticacao.vericacaoemail(cadastros);
-            if ("Email cadastrado".equals(response)) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            if (service_Autenticacao.(cadastros.getEmail())) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email já cadastrado");
             }
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    
+            service_Autenticacao.salvarUsuario(cadastros);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Cadastro realizado com sucesso");
         }
 }

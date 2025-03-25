@@ -10,17 +10,19 @@ import ecomece.ecomece.Repository.UsuarioRepository;
 
 @Service
 public class Service_Autenticacao {
-@Autowired 
-UsuarioRepository usuarioRepository;
-
-
-public String vericacaoemail (Cadastros cadastros){
-    Optional<Cadastros> usuario = usuarioRepository.findByEmail(cadastros.getEmail());
-    if (usuario.isPresent()) {
-         return "Ja existe o usuario com esse email";
-    }
-     usuarioRepository.save(cadastros);
-     return "usuario cadastrado";
+     private final UsuarioRepository usuarioRepository;
+     @Autowired
+     public Service_Autenticacao(UsuarioRepository cadastroRepository) {
+          this.usuarioRepository = cadastroRepository;
+     }
+ 
+     public  boolean emailJaCadastrado(String email) {
+         return usuarioRepository.findByEmail(email).isPresent();
+     }
+ 
+     public void salvarUsuario(Cadastros cadastros) {
+         usuarioRepository.save(cadastros);
+     }
 }
 
 
@@ -28,4 +30,4 @@ public String vericacaoemail (Cadastros cadastros){
 
 
 
-}
+
