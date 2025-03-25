@@ -13,6 +13,7 @@ import java.util.List;
 
 public interface UsuarioRepository  extends  JpaRepository  <Cadastros, Long> {
         Optional <Cadastros>  findByEmail(String email);
+        boolean existsByEmail(String email);
         
 }
 
